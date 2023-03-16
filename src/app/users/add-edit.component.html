@@ -1,5 +1,5 @@
-<h4 *ngIf="isAddMode" class="title-section"><i class="bi bi-person-fill-add"></i><span class="underline"> Agregar Empleado</span></h4>
-<h4 *ngIf="!isAddMode"><i class="bi bi-person-fill-gear"></i><span class="underline"> Editar Empleado</span></h4>
+<h4 *ngIf="isAddMode" class="mb-4"><i class="bi bi-person-fill-add"></i><span class="underline"> Agregar Empleado</span></h4>
+<h4 *ngIf="!isAddMode" class="mb-4"><i class="bi bi-person-fill-gear"></i><span class="underline"> Editar Empleado</span></h4>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="row mb-4 mt-4 d-flex align-items-center" *ngIf="!isAddMode">
         <label class="mb-1 col-1">Id:</label>
