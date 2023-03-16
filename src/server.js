@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static('./dist/ksp_evaluation'));
 
 app.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: 'dist/angular-heroku/'}),
+    res.sendFile('index.html', {root: 'dist/ksp_evaluation/'}),
 );
 
 // Start the app by listening on the default Heroku port
