@@ -4,9 +4,10 @@ import { AbstractControlOptions, FormBuilder, FormGroup, Validators } from '@ang
 import { first } from 'rxjs/operators';
 
 import { UserService, AlertService } from '../_services';
-import { MustMatch } from '../_helpers';
+import { MustMatch } from '../_helpers/must-match.validator';
 
 @Component({ templateUrl: 'add-edit.component.html' })
+
 export class AddEditComponent implements OnInit {
     form!: FormGroup;
     id!: string;
