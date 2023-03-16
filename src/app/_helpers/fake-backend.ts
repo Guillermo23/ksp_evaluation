@@ -60,7 +60,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             if (users.find(x => x.email === user.email)) {
                 return error(`User with the email ${user.email} already exists`);
             }
-
+            console.log(1,user)
             // assign user id and a few other properties then save
             user.id = newUserId();
             delete user.confirmPassword;

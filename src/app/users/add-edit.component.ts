@@ -5,6 +5,7 @@ import { first } from 'rxjs/operators';
 
 import { UserService, AlertService } from '../_services';
 import { MustMatch } from '../_helpers/must-match.validator';
+import { User } from '../_models';
 
 @Component({ templateUrl: 'add-edit.component.html' })
 
@@ -14,6 +15,7 @@ export class AddEditComponent implements OnInit {
     isAddMode!: boolean;
     loading = false;
     submitted = false;
+    myDateValue: Date | undefined;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -38,6 +40,10 @@ export class AddEditComponent implements OnInit {
             id: [''],
             title: ['', Validators.required],
             firstName: ['', Validators.required],
+            fullName: ['', Validators.required],
+            relationship: ['', Validators.required],
+            birthday: ['', Validators.required],
+            sex: ['', Validators.required],
             lastName: ['', Validators.required],
             email: ['', [Validators.required, Validators.email]],
             role: ['', Validators.required],
@@ -75,7 +81,20 @@ export class AddEditComponent implements OnInit {
     }
 
     private createUser() {
-        this.userService.create(this.form.value)
+        let newUser = new User;
+        newUser.email = this.form.value.email;
+        newUser.firstName = this.form.value.firstName;
+        newUser.lastName = this.form.value.lastName;
+        newUser.title = this.form.value.title;
+        newUser.role = this.form.value.role;
+        newUser.beneficiary = {
+            fullName: this.form.value.fullName,
+            relationship: this.form.value.relationship,
+            birthdate: this.form.value.birthdate,
+            sex: this.form.value.sex,
+        };
+        console.log(newUser, this.form.value);
+        this.userService.create(newUser)
             .pipe(first())
             .subscribe(() => {
                 this.alertService.success('User added', { keepAfterRouteChange: true });

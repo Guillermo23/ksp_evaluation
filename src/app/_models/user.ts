@@ -1,4 +1,5 @@
 import { Role } from './role';
+import { Beneficiary } from './beneficiary';
 
 export class User {
     id!: string;
@@ -7,5 +8,6 @@ export class User {
     lastName!: string;
     email!: string;
     role!: Role;
+    beneficiary?: Beneficiary
     isDeleting: boolean = false;
 }
