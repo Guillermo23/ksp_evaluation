@@ -6,16 +6,16 @@ import { delay, materialize, dematerialize } from 'rxjs/operators';
 import { Role } from '../_models';
 
 // array in local storage for registered users
-const usersKey = 'angular-11-crud-example-users';
+const usersKey = 'angular-crud';
 const usersJSON = localStorage.getItem(usersKey);
 let users: any[] = usersJSON ? JSON.parse(usersJSON) : [{
     id: 1,
     title: 'Mr',
-    firstName: 'Joe',
-    lastName: 'Bloggs',
-    email: 'joe@bloggs.com',
+    firstName: 'Guillermo',
+    lastName: 'Carapia',
+    email: 'g.carapia@outlook.com',
     role: Role.User,
-    password: 'joe123'
+    password: 'memo123'
 }];
 
 @Injectable()

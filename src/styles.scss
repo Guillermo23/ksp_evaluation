@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+.underline {
+    text-decoration: none;
+    position: relative;
+}
+
+.underline:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    bottom: -6px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 50%;
+    background: #264f6e;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+
+/* optional hover classes used with anmiation */
+.underline:hover:after {
+    width: 80%;
+    background: orange;
+}
